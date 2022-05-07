@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Shrink</title>
+    <style>
+        .flex-container{
+            display: flex;
+            max-width: 350px;
+            border: 1px dashed black;
+        }
+
+        .item{
+            margin: 5px;
+            background-color: chartreuse;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .s1{
+            flex-shrink: 1;
+        }
+
+        .fg1{
+            flex-grow: 1;
+        }
+
+        .s0{
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+
+        .s2{
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .s3{
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Flex Shrink: 1</p>
+    <div class="flex-container">
+        <div class="item s1 fg1 ">A</div>
+        <div class="item s1 fg1">B</div>
+        <div class="item s1 fg1">C</div>
+        <div class="item s1 fg1">D</div>
+        <div class="item s1 fg1">E</div>
+    </div>
+
+    <p>Flex Shrink: 1</p>
+    <div class="flex-container">
+        <div class="item s1 fg1 ">A</div>
+        <div class="item s1 fg1">Teste</div>
+        <div class="item s1 fg1">C</div>
+        <div class="item s1 fg1">D</div>
+    </div>
+
+    <p>Flex Shrink: 0 / basis: 100px</p>
+    <div class="flex-container">
+        <div class="item s0 fg1 ">A</div>
+        <div class="item s0 fg1">Teste </div>
+        <div class="item s0 fg1">C</div>
+        <div class="item s0 fg1">D</div>
+    </div>
+    <p>Flex Shrink: mix / basis: 100px</p>
+    <div class="flex-container">
+        <div class="item s2 fg1 ">A</div>
+        <div class="item s3 fg1">Teste </div>
+        <div class="item s0 fg1">C</div>
+        <div class="item s3 fg1">D</div>
+    </div>
+</body>
+</html>
