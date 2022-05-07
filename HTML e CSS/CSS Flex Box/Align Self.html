@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align Self</title>
+    
+    <style>
+        .container{
+            display: flex;
+            max-width: 300px;
+            border: 1px dashed black;
+            margin-bottom: 10px;
+            
+        }
+        .container-center{
+            align-items: center;
+        }
+        .item{
+            background-color: aqua;
+            font-size: 24px;
+            color: aliceblue;
+            margin: 5px;
+            text-align: center;
+        }
+        .auto{
+            align-self: auto;
+        }
+        .center{
+            align-self: center;
+        }
+        .start{
+            align-self: flex-start;
+        }
+        .end{
+            align-self: flex-end;
+        }
+        .stretch{
+            align-self: stretch;
+        }
+        .baseline{
+            align-self: baseline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-center">
+        <div class="item auto">AAAA</div>
+        <div class="item auto">123</div>
+        <div class="item auto">Gabriel Alvi teste</div>
+        <div class="item auto">Lindo</div>
+    </div>
+    <div class="container">
+        <div class="item stretch">AAAA</div>
+        <div class="item auto">123</div>
+        <div class="item start">Gabriel Alvi teste</div>
+        <div class="item end">Lindo</div>
+        <div class="item baseline">Lindo</div>
+        <div class="item  center">123</div>
+    </div>
+</body>
+</html>
