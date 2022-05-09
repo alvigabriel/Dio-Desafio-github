@@ -38,6 +38,23 @@ body{
     height: 50rem;
 }
 
+.insta-phone::before{
+
+    content:"Devgram é uma rede social semelhante ao instagram, porém voltada para desenvolvedores. esta landing page está quase 100% funcional, apenas para visualização. Clique no botão continuar para ser redirecionado(a). ";
+    height: auto;
+    width: 180px;
+    margin-right: 5px;
+    background-color:#0095f6;
+    position: fixed;
+    font-size: 14px;
+    align-self: center;
+    justify-content: center;
+    color: aliceblue;
+    text-align: justify;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .insta-cont{
     display: flex;
     align-items: center;
@@ -142,6 +159,7 @@ body{
 @media(max-width: 1024px){
     .insta-wrapper{
         width: 90%;
+ 
     }
 
     .app-download{
@@ -149,7 +167,14 @@ body{
         align-items: space-evenly;
        
     }
+
+    
+
+
 }
+    
+        
+
 
 @media(max-width: 650px){
 
@@ -158,12 +183,28 @@ body{
     }
 
     .insta-wrapper{
-        width: 90%;  
+        width: 90%; 
+        flex-direction: column-reverse; 
+        align-items: center;
+        justify-content: space-evenly;
         
     }
 
     .insta-phone img{
        display: none;
+    }
+
+    .insta-phone::before{
+        
+        align-items: center;
+        justify-content: space-between;
+        min-width: 90%;
+        margin: 100px;
+        max-height: auto;
+        
+        
+        
+        
     }
 
     .insta-cont{
@@ -173,4 +214,6 @@ body{
     .group{
         border: 1px solid transparent;
     }
+
+
 }
