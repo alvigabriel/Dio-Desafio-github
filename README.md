@@ -1,2 +1,3 @@
 # Desafio DIO sobre Git/Github 
-Desafio primeiro repositório no GitHub - DIO
+
+Este repositório será usado para salvar os desafios de projetos e atividades práticas realizados por mim pelo curso Spread Full Stack, da Dio.
