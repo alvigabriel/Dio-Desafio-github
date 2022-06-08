@@ -37,11 +37,39 @@
 // //     executarRugido: (alturaEmDecibeis) =>(`${alturaEmDecibeis}db`)
 // // }
 
-const input = document.getElementById('input') as HTMLInputElement; 
 
 
-input.addEventListener('input', (event) => {
+// const input = document.getElementById('input') as HTMLInputElement; 
 
-    const i = event.currentTarget as HTMLInputElement;
-    console.log(i.value);
-});
+
+// input.addEventListener('input', (event) => {
+
+//     const i = event.currentTarget as HTMLInputElement;
+//     console.log(i.value);
+// });
+
+
+/*Generic types */
+
+// function addApendiceALista<T>(array: T[], valor: T) {
+//         return array.map(item => item + valor);
+// };
+
+// addApendiceALista([1, 2, 3, ], 4); 
+
+interface IUsuario {
+    id: string;
+    email: string;
+}
+
+interface IAdmin extends IUsuario{
+    cargo: 'gerente' | 'coordenador' | 'supervisor';
+}
+
+function redirecione(usuario: IUsuario | IAdmin) {
+    if('cargo in usuario') {
+        // redirecionar para a area de administração
+    }
+
+    // redirecionar para a area de usuario
+}
