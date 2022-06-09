@@ -51,25 +51,67 @@
 
 /*Generic types */
 
-// function addApendiceALista<T>(array: T[], valor: T) {
-//         return array.map(item => item + valor);
+function addApendiceALista<T>(array: any[], valor: T) {
+        return array.map(item => item + valor);
+};
+
+addApendiceALista([1, 2, 3, ], 4); 
+ 
+
+// ======================================================
+
+// interface IUsuario {
+//     id: string;
+//     email: string;
+// }
+
+
+// interface IAdmin extends IUsuario {
+//     cargo: 'gerente' | 'coordenador' | 'supervisor';
+// }
+
+// function redirecione (usuario: IUsuario | IAdmin) {
+//     if ('cargo' in usuario) {
+//         // redireconar para a área de administração
+//     }
+
+//     // redireconar para a área de usuário
 // };
 
-// addApendiceALista([1, 2, 3, ], 4); 
 
-interface IUsuario {
-    id: string;
-    email: string;
-}
+// ======================================================
 
-interface IAdmin extends IUsuario{
-    cargo: 'gerente' | 'coordenador' | 'supervisor';
-}
+// interface IUsuario {
+//     id: string;
+//     email: string;
+//     cargo?: 'funcionário' | 'gerente' | 'coordenador' | 'supervisor'; //? significa que é um valor opcional
+// }
 
-function redirecione(usuario: IUsuario | IAdmin) {
-    if('cargo in usuario') {
-        // redirecionar para a area de administração
-    }
 
-    // redirecionar para a area de usuario
-}
+
+// function redirecione (usuario: IUsuario ) {
+//     if(usuario.cargo) {
+//          // redireconar(usuario.cargo)
+//     }
+//         // redireconar para a área de usuário
+// }
+
+// =========================================
+
+// interface cachorro {
+//     nome: string;
+//     idade: number;
+//     parquefavorido?: string
+// }
+
+// class MeuCachorro implements cachorro {
+//     idade;
+//     nome;
+
+//     constructor(nome, idade) {
+//         this.nome = nome;
+//         this.idade = idade;
+//     }
+// }
+
+// const cao = new MeuCachorro('Simba', 14);
