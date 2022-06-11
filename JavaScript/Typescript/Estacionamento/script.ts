@@ -13,7 +13,7 @@ interface veiculo {
               const sec =  Math.floor((mil % 60000) / 1000);
 
               return `${min}m e ${sec}s`;
-          };
+          }
 
           function patio() {
               function ler(): veiculo[] {
@@ -32,29 +32,28 @@ interface veiculo {
                     <td>${veiculo.placa}</td>
                     <td>${veiculo.entrada}</td>
                     <td>
-                        <button class="delete" data="placa"${veiculo.placa}>X</button>
+                        <button class="delete" data-placa="${veiculo.placa}">X</button>
                     </td>
                   `;
 
-                  row.querySelector(".delete")?.addEventListener("click", function(){
-                      remover(this.dataset.placa)
+                  row.querySelector(".delete")?.addEventListener("click", function () {
+                      remover(this.dataset.placa);
                   });
 
                   $("#patio")?.appendChild(row);
 
-                  if(salva) salvar([...ler(), veiculo])
+                  if (salva) salvar([...ler(), veiculo]); 
               }
 
-              function remover(placa: string){
-                  const {entrada, nome} = ler().find(
-                  (veiculo) => veiculo.placa === placa
-                  );
+              function remover(placa: string) {
 
-                  const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
+                const { entrada, nome } = ler().find(veiculo => veiculo.placa === placa);
 
-                  if(!confirm(`O veículo ${nome} permaneceu por ${tempo}. Deseja encerrar?`)) return;
+                const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
 
-                salvar(ler().filter(veiculo => veiculo.placa !==placa));  
+                if(!confirm(`O veículo ${nome} permaneceu por ${tempo}. Deseja encerrar?`)) return;
+                
+                salvar(ler().filter((veiculo) => veiculo.placa !== placa));
                 render();
               }
 
@@ -71,19 +70,22 @@ interface veiculo {
 
               return{ler, adicionar, remover, salvar, render};
           }
-          patio().render();
 
+
+    patio().render();
     $("#cadastrar")?.addEventListener("click", () => {
        const nome = $("#nome")?.value; 
        const placa = $("#placa")?.value; 
-        console.log({nome, placa})
+        
        if (!nome || !placa) {
            alert("Os campos nome e placa são obrigatórios");
            return;
        }
-       patio().adicionar({nome, placa, entrada: new Date().toISOString()}, true);
+       
+       patio().adicionar({ nome, placa, entrada: new Date().toISOString() }, true);
     });
 })(); 
+
 // 1 =função anonima  
 /*2 = a const $pega elementos com query, que pode vir de um html ou 
 um valor nulo*/
