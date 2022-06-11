@@ -2,6 +2,7 @@ interface veiculo {
     nome: string;
     placa: string;
     entrada: Date | string;
+    clienteId?: string
 }
 
 (function () {   /*1*/

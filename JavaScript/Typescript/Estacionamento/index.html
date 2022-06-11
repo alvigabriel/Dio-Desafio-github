@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estacionamento</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <input type="text" id="nome" placeholder="Digite o nome do veículo: " 
+
+    <span id="container">
+        <input type="text" id="nome" placeholder="Digite o nome do veículo: " 
     autocomplete="off"
     />
     <input type="text" id="placa" placeholder="Digite a placa do veículo: " 
@@ -15,7 +18,9 @@
     />
     <button id="cadastrar">Cadastrar</button>
 
-    <table>
+    
+
+    <table class="table">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -26,6 +31,10 @@
         </thead>
         <tbody id="patio"></tbody>
     </table>
+
+    </span>
+
+    
     <script src="./script.js"></script>
 </body>
 </html>
